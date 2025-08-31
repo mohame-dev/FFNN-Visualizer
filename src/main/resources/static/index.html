@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Function Plotter</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-function">
+            <div class="input-wrapper">
+                <label for="equation">f(x) = </label>
+                <input type="text" placeholder="x^2" name="equation" class="equation">
+                <button class="learn btn" role="button">
+                    learn f(x)
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="container-main">
+            <div class="container-main-left">
+                <button class="advanced" role="button">advanced <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#000000">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                    </svg>
+                </button>
+                <div class="form-advanced">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="xmin">x<sub>min</sub></label>
+                            <input type="number" id="xmin" name="xmin" value="-50" class="xmin" step="any">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="xmax">x<sub>max</sub></label>
+                            <input type="number" id="xmax" name="xmax" value="50" class="xmax" step="any">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="npts">n<sub>points</sub></label>
+                            <input type="number" id="npts" name="npts" value="1000" class="npts" min="1" step="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="epochs">epochs</label>
+                            <input type="number" id="epochs" name="epochs" value="5000" class="epochs" min="1" step="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interval">interval</label>
+                            <input type="number" id="interval" name="interval" value="100" class="interval" min="1"
+                                step="1">
+                        </div>
+                    </div>
+                    <button class="save btn" role="button">save</button>
+                </div>
+            </div>
+            <div class="container-main-center">
+                <canvas id="chart"></canvas>
+            </div>
+            <div class="container-main-right">
+                epoch: <span id="epoch"></span>/<span id="maxEpoch"></span><br>
+                loss: <span id="loss"></span><br>
+                val_loss: <span id="valLoss"></span>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/chart.js"></script>
+</body>
+
+</html>
