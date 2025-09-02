@@ -39,15 +39,16 @@ Now go to <http://localhost:8080/>!
 ### 2. API
 - #### POST `/validate`
     Validates a math expression and samples `(x, y)` points.
+  
     **Request body**
     ```json
     {
-    "expression": "sin(x) + 0.1*x",
-    "xmin": -10,
-    "xmax": 10,
-    "npoints": 200,
-    "epochs": 1000,
-    "interval": 10
+        "expression": "sin(x) + 0.1*x",
+        "xmin": -10,
+        "xmax": 10,
+        "npoints": 200,
+        "epochs": 1000,
+        "interval": 10
     }
     ```
     **Response (success)**
@@ -69,6 +70,7 @@ Now go to <http://localhost:8080/>!
 
 - #### GET `/stream-sse`
     Streams JSON snapshots every `interval` epochs.
+  
     **Payload (example)**
     ```json
     {
