@@ -91,7 +91,7 @@ public class ApiController {
                         double tl = t.trainLoss();
                         double vl = t.valLoss();
 
-                        // Return datra
+                        // Return data
                         PredictionResponse data = new PredictionResponse(x, pred, epoch, tl, vl);
                         emitter.send(SseEmitter.event()
                                 .name("epoch")
