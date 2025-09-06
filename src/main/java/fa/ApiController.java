@@ -112,7 +112,6 @@ public class ApiController {
         });
 
         emitter.onTimeout(emitter::complete);
-        // emitter.onCompletion(() -> {});
         return emitter;
     }
 
